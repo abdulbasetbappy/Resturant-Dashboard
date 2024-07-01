@@ -57,22 +57,7 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      email: '',
-      password: ''
-    }
-  },
-  methods: {
-    login() {
-      // Add your login logic here
-      console.log('Email:', this.email)
-      console.log('Password:', this.password)
-    }
-  }
-}
+<script setup >
 </script>
 
 <style>

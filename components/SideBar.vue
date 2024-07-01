@@ -1,15 +1,15 @@
 <template>
-    <div class="h-screen flex flex-col bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg shadow-lg">
-      <div class="flex items-center justify-center h-16 bg-white text-white">
-        <div class="flex-shrink-0">
+    <div class="h-screen flex flex-col bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg">
+        <nuxt-link to="/Dashboard" class="flex items-center justify-center h-16 bg-white text-white shadow-lg">
+          <div class="flex-shrink-0">
               <img class="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Logo">
-            </div>
+          </div>
         <h1 class="text-2xl ml-2 text-indigo-500 font-semibold">Dashboard</h1>
-      </div>
+        </nuxt-link>
       <nav class="flex-1 py-4 overflow-y-auto">
         <ul class="space-y-2">
           <li>
-            <Nuxt-Link to="/Dashboard" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
+            <Nuxt-Link to="/Dashboard" class="flex items-center px-4 hover:rounded-lg py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
               <span class="mr-3 flex items-center">
                 <Icon name="mage:dashboard-4-fill" class="w-6 h-6" />
               </span>
@@ -17,7 +17,7 @@
             </Nuxt-Link>
           </li>
           <li>
-            <Nuxt-Link to="/Sales" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
+            <Nuxt-Link to="/Sales" class="flex items-center hover:rounded-lg px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
               <span class="mr-3 flex items-center">
                 <Icon name="mage:dashboard-chart-arrow-fill" class="w-6 h-6" />
               </span>
@@ -25,7 +25,7 @@
             </Nuxt-Link>
           </li>
           <li>
-            <Nuxt-Link to="/Reviews" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
+            <Nuxt-Link to="/Reviews" class="flex items-center hover:rounded-lg px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
               <span class="mr-3 flex items-center">
                 <Icon name="material-symbols:reviews-rounded" class="w-6 h-6" />
               </span>
@@ -33,7 +33,7 @@
             </Nuxt-Link>
           </li>
           <li>
-            <Nuxt-Link to="/Menu" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
+            <Nuxt-Link to="/Menu" class="flex items-center px-4 py-2 hover:rounded-lg text-gray-700 hover:bg-gray-200 hover:text-gray-900">
               <span class="mr-3 flex items-center">
                 <Icon name="ic:twotone-restaurant-menu" class="w-6 h-6" />
               </span>
@@ -41,7 +41,7 @@
             </Nuxt-Link>
           </li>
           <li>
-            <Nuxt-Link to="/Stuff" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
+            <Nuxt-Link to="/Stuff" class="flex items-center px-4 hover:rounded-lg py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
               <span class="mr-3 flex items-center">
                 <Icon name="material-symbols:person-pin-rounded" class="w-6 h-6" />
               </span>
@@ -49,7 +49,7 @@
             </Nuxt-Link>
           </li>
           <li>
-            <Nuxt-Link to="/Customer" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
+            <Nuxt-Link to="/Customer" class="flex items-center hover:rounded-lg px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
               <span class="mr-3 flex items-center">
                 <Icon name="flowbite:users-group-solid" class="w-6 h-6" />
               </span>
@@ -57,7 +57,7 @@
             </Nuxt-Link>
           </li>
           <li>
-            <Nuxt-Link to="/Invoice" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
+            <Nuxt-Link to="/Invoice" class="flex items-center px-4 hover:rounded-lg py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
               <span class="mr-3 flex items-center">
                 <Icon name="mdi:invoice-text-edit" class="w-6 h-6" />
               </span>
@@ -65,7 +65,7 @@
             </Nuxt-Link>
           </li>
           <li>
-            <Nuxt-Link to="/Marketing" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
+            <Nuxt-Link to="/Marketing" class="flex items-center hover:rounded-lg px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
               <span class="mr-3 flex items-center">
                 <Icon name="mage:dashboard-bar-fill" class="w-6 h-6" />
               </span>
@@ -73,7 +73,7 @@
             </Nuxt-Link>
           </li>
           <li>
-            <Nuxt-Link to="/Pages" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
+            <Nuxt-Link to="/Pages" class="flex items-center px-4 hover:rounded-lg py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
               <span class="mr-3 flex items-center">
                 <Icon name="simple-icons:powerpages" class="w-6 h-6" />
               </span>
@@ -81,7 +81,7 @@
             </Nuxt-Link>
           </li>
           <li>
-            <Nuxt-Link to="/Settings" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
+            <Nuxt-Link to="/Settings" class="flex items-center  px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
               <span class="mr-3 flex items-center">
                 <Icon name="material-symbols:settings-heart-rounded" class="w-6 h-6" />
               </span>
@@ -94,12 +94,6 @@
   </template>
   
   <script>
-  export default {
-    name: 'SideBar'
-  }
-  </script>
-  
-  <style>
 
-  </style>
+  </script>
   
