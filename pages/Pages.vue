@@ -28,4 +28,7 @@
 import { ref } from 'vue';
 
 const active = ref(0);
+definePageMeta({
+        layout: 'dash-board'
+    })
 </script>

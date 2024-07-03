@@ -3,10 +3,7 @@
     <div class="card">
         <TabView v-model:activeIndex="active">
             <TabPanel header="Locations">
-                <p class="m-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
+                <Locations/>
             </TabPanel>
             <TabPanel header="Delivery Zones">
                 <p class="m-0">
@@ -52,4 +49,19 @@
 import { ref } from 'vue';
 
 const active = ref(0);
+definePageMeta({
+        layout: 'dash-board'
+})
 </script>
+<style >
+.p-highlight > a >span {
+    color: #5b45f4 ;
+}
+.p-tabview-title{
+    color: #000000c2;
+}
+.p-tabview-ink-bar {
+    background-color: #5b45f4;
+    height: 2px;
+}
+</style>

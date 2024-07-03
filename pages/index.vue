@@ -2,8 +2,10 @@
   <div class="min-h-screen flex flex-col items-center justify-center bg-cover bg-center relative">
     <div class="max-w-md w-full space-y-8 p-10 bg-indigo-900 bg-opacity-30 backdrop-filter backdrop-blur-sm rounded-lg shadow-lg">
       <h2 class="text-center text-3xl font-extrabold text-indigo-900">Sign in to your account</h2>
-      <form class="mt-8 space-y-6" @submit.prevent="login">
+      <!--Form-->
+      <form class="mt-8 space-y-6" @submit.prevent="login()">
         <div class="rounded-md shadow-sm flex gap-2 flex-col">
+          <!--Email-->
           <div>
             <label for="email-address" class="sr-only">Email address</label>
             <input
@@ -12,11 +14,12 @@
               type="email"
               autocomplete="email"
               required
-              v-model="email"
+              v-model="form.email"
               class="appearance-none rounded-md relative block w-full px-3 py-2 border border-transparent placeholder-gray-500 text-indigo-950 bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
               placeholder="Email address"
             />
           </div>
+          <!--Password-->
           <div>
             <label for="password" class="sr-only">Password</label>
             <input
@@ -25,12 +28,13 @@
               type="password"
               autocomplete="current-password"
               required
-              v-model="password"
+              v-model="form.password"
               class="appearance-none rounded-md relative block w-full px-3 py-2 border border-transparent placeholder-gray-500 text-indigo-950 bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
               placeholder="Password"
             />
           </div>
         </div>
+        <!--Sign In Button-->
         <div>
           <button
             type="submit"
@@ -57,11 +61,19 @@
   </div>
 </template>
 
-<script setup >
+<script setup lang='ts' >
+const form = reactive({
+  email: 'admin@example.com',
+  password: 'password'
+});
+const router = useRouter();
+const login = () => {
+  console.log(form);
+  router.push('/dashboard');
+}
 </script>
 
 <style>
-
 /* Footer background and animation */
 .new_footer_top .footer_bg {
   position: absolute;
@@ -97,7 +109,6 @@
   -webkit-animation: myFirst 30s linear infinite;
   animation: myFirst 30s linear infinite;
 }
-
 @keyframes myFirst {
   0% {
     left: -25%;
