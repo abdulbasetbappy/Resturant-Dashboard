@@ -1,11 +1,7 @@
 <template>
     <div>
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h1>Review</h1>
-                </div>
-            </div>
+            <reviewsDataTable/>
         </div>
     </div>
 </template>
