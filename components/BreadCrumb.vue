@@ -12,7 +12,7 @@
   const route = useRoute();
   
   const home = ref({
-    icon: 'pi pi-home'
+    icon: 'pi pi-home',
   });
   
   const breadcrumbItems = computed(() => {
