@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1>Marketing</h1>
+                    <h1>offers</h1>
                 </div>
             </div>
         </div>

@@ -65,11 +65,11 @@
             </Nuxt-Link>
           </li>
           <li>
-            <Nuxt-Link to="/Marketing" class="flex items-center hover:rounded-lg px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
+            <Nuxt-Link to="/offers" class="flex items-center hover:rounded-lg px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900">
               <span class="mr-3 flex items-center">
                 <Icon name="mage:dashboard-bar-fill" class="w-6 h-6" />
               </span>
-              Marketing
+              Offers
             </Nuxt-Link>
           </li>
           <li>

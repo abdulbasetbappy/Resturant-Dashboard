@@ -12,12 +12,14 @@
   "dependencies": {
     "@nuxt/icon": "^1.0.0",
     "@pinia/nuxt": "^0.5.1",
+    "chart.js": "^4.4.4",
     "nuxt": "^3.12.2",
     "nuxt-primevue": "^3.0.0",
     "primeicons": "^7.0.0",
     "primevue": "^3.53.0",
     "quill": "^2.0.2",
-    "vue": "latest"
+    "vue": "latest",
+    "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
