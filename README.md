@@ -1,75 +1,23 @@
-# Nuxt Minimal Starter
+# Dynamic Components Features
+------------
+## Button
+**overWriteClass** : Can Be Anything Inside TailwindCSS Classes as String.
+**label** : Can Be Any Text But  if not interested to use label then `none`  as String.
+**icon** : Any Type of Icon Name From [icones.js](https://icones.js.org/ "icones.js")  or if Not interested to use icon then `none` as String.
+**iconPosition** : Can Be only `left` & `right` as String.
+**handleSubmit** : Only Can be Function it is not required.
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## File Drop Zone
+**accept** : Here gose Image Types But the default value is `default: "image/*"`
+**label** : Can Be Any Text But  if not interested to use label then `none`  as String.
+**type** : This is Variation Type and this Can be `file` , `profile`, `menu`.
 
-## Setup
+## Toggole
+**label** : Can Be Any Text But  if not interested to use label then `none`  as String.
+**labelPosition** : This can be `left`  & `right` But default is `right`
+**modelValue** :  This is *Required* Value And default is `true`
 
-Make sure to install dependencies:
 
-```bash
-# npm
-npm install
+# Dynamic Sections Features
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Delete Popup 

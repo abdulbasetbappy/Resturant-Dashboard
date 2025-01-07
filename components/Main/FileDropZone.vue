@@ -77,6 +77,45 @@
       />
     </div>
   </div>
+  <div v-if="type === 'menu' || type === 'items'">
+    <h1 class="text-lg text-slate-200">{{ label }}</h1>
+    <div
+      ref="dropzone"
+      class="w-full h-[250px] relative border-2 border-slate-400 border-dashed rounded-xl p-2 mx-auto my-2 flex items-center justify-center"
+      @dragover.prevent="handleDragOver"
+      @dragleave.prevent="handleDragLeave"
+      @drop.prevent="handleDrop"
+    >
+      <input
+        type="file"
+        id="file-upload"
+        class="absolute inset-0 w-full cursor-pointer h-full opacity-0 z-50"
+        :accept="accept"
+        @change="handleFileChange"
+      />
+      <div class="text-center py-8" v-if="!preview">
+        <Icon
+          name="solar:cloud-upload-line-duotone"
+          class="mx-auto h-12 w-12"
+        />
+        <h3 class="mt-2 text-sm font-medium text-slate-400">
+          <label for="file-upload" class="relative cursor-pointer">
+            <span>Drag and drop</span>
+            <span class="text-indigo-600 underline"> or browse</span>
+            <span> to upload</span>
+          </label>
+        </h3>
+        <p class="mt-1 text-xs text-slate-500">PNG, JPG, GIF up to 10MB</p>
+      </div>
+
+      <img
+        v-else
+        :src="preview"
+        class="mx-auto w-full h-full object-cover rounded-xl"
+        alt="File Preview"
+      />
+    </div>
+  </div>
 </template>
 
 <script setup>

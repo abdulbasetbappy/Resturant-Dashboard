@@ -1,19 +1,22 @@
 <template>
   <button
-    class="bg-slate-500 px-4 py-2 rounded-lg text-blue-50 flex items-center justify-center gap-2"
+  :class="[
+      'bg-slate-500 text-blue-50 flex items-center justify-center hover:bg-slate-600',
+      overWriteClass
+    ]"
     @click="handleSubmit"
   >
-    <Icon :name="icon" class="w-6 h-6"  v-if="iconPosition==='left'" />
-    <span>{{ label }}</span>
-    <Icon :name="icon" class="w-6 h-6" v-if="iconPosition==='right'" />
+    <Icon :name="icon" class="w-6 h-6"  v-if="icon !=='none' && iconPosition==='left'" />
+    <span v-if="label !=='none'">{{ label }}</span>
+    <Icon :name="icon" class="w-6 h-6" v-if="icon !=='none'  && iconPosition==='right'" />
   </button>
 </template>
 
-<script setup lang="ts">
+<script setup >
 defineProps({
   handleSubmit: {
     type: Function,
-    required: true,
+    required: false,
   },
   label: {
     type: String,
@@ -26,6 +29,10 @@ defineProps({
   iconPosition: {
     type: String,
     default: "right",
+  },
+  overWriteClass: {
+    type: String,
+    default: "px-4 py-2 rounded-lg gap-2",
   },
 });
 </script>

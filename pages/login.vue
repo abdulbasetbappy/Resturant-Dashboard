@@ -92,15 +92,12 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup >
 definePageMeta({
   layout: "fullpage",
 });
-interface User {
-  email: string;
-  password: string;
-}
-const user = reactive<User>({
+
+const user = reactive({
   email: "",
   password: "",
 });
