@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="sidebar fixed lg:static w-[240px] h-[calc(100vh-4rem)] lg:h-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-45 overflow-y-auto p-1 "
+    class="sidebar fixed lg:static w-[240px] h-[calc(100vh-4rem)] lg:h-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-45 overflow-y-auto p-1 pl-0 "
   >
     <div
       class="bg-slate-900 bg-opacity-30 rounded-xl py-1 shadow-lg mb- transition-all duration-300 border-[1px] border-slate-900"

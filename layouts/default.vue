@@ -5,7 +5,7 @@
       </div>
       <div class="pt-4 max-w-[83rem] mx-auto flex">
         <Sidebar />
-        <main class="flex-1 px-4 py-2">
+        <main class="flex-1 px-4 pr-0 py-2">
             <slot/>
         </main>
       </div>

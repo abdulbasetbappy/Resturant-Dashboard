@@ -60,4 +60,5 @@
 
 <script setup>
 const uploadedFile = ref(null);
+
 </script>

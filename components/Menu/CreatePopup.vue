@@ -2,9 +2,27 @@
   <div>
     <!-- Add New Menu Button -->
     <MainButton
-      label="Add New Menu"
-      icon="solar:add-square-bold-duotone"
-      :handleSubmit="handleSubmit"
+      v-if="buttonType === 'text'"
+      :label="buttonLabel"
+      icon="none"
+      @click="isPopupOpen = true"
+      :overWriteClass="customBtnClass"
+    />
+    <MainButton
+      v-if="buttonType === 'icon'"
+      label="none"
+      :icon="buttonIcon"
+      :iconPosition="buttonIconPosition"
+      overWriteClass="rounded-lg bg-opacity-0"
+      iconClass="w-8 h-8"
+      @click="isPopupOpen = true"
+    />
+    <MainButton
+      v-if="buttonType === 'both'"
+      :label="buttonLabel"
+      :icon="buttonIcon"
+      :iconPosition="buttonIconPosition"
+      overWriteClass="px-4 py-2 text-base rounded-lg gap-2"
       @click="isPopupOpen = true"
     />
     <!-- Popup Modal -->
@@ -13,7 +31,7 @@
       class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50"
     >
       <div
-        class="bg-slate-800 w-[28rem] p-6 rounded-lg shadow-lg animate-fadeIn relative"
+        class="bg-slate-800 opacity-100 w-[28rem] p-6 rounded-lg shadow-lg animate-fadeIn relative"
       >
         <!-- Close Button -->
         <MainButton
@@ -25,26 +43,26 @@
 
         <!-- Popup Content -->
 
-        <h2 class="text-xl font-bold mb-4 text-slate-100">Add New Menu</h2>
+        <h2 class="text-xl font-bold mb-4 text-slate-100">{{ label }}</h2>
 
-        <form @submit.prevent="handleSubmit">
+        <form @submit.prevent="handleSubmit(apiUrl)">
           <label class="block mb-2 text-gray-200 text-lg">
-            Menu Name
+            {{ nameLabel }}
             <input
               type="text"
-              v-model="menuName"
+              v-model="name"
               class="block w-full p-2 border border-slate-300 rounded-md outline-none"
-              placeholder="Enter menu name"
+              :placeholder="namePlaceholder"
               required
             />
           </label>
           <label class="block mb-2 text-gray-200 text-lg">
-            Description
+            {{ descriptionLabel }}
             <textarea
               type="text"
-              v-model="menudescription"
+              v-model="description"
               class="block w-full p-2 border border-slate-300 rounded-md outline-none"
-              placeholder="Enter menu Description"
+              :placeholder="descriptionPlaceholder"
               required
             />
           </label>
@@ -54,17 +72,17 @@
             v-model:file="uploadedFile"
           />
           <div class="mt-4 flex gap-3 justify-between">
-            <MainToggle />
+            <MainToggle v-model="status" />
             <MainButton
               label="Save"
               icon="solar:archive-up-minimlistic-line-duotone"
-              :handleSubmit="handleSubmit"
               overWriteClass=" w-full rounded-lg gap-2 text-xl"
+              type="submit"
             />
             <MainButton
               label="none"
               icon="solar:trash-bin-trash-bold-duotone"
-              :handleSubmit="handleCancel"
+              @click="handleCancel"
             />
           </div>
         </form>
@@ -75,16 +93,78 @@
 
 <script setup>
 const isPopupOpen = ref(false);
-const menuName = ref("");
+const name = ref("");
+const description = ref("");
+const uploadedFile = ref(null);
+const status = ref(true);
+defineProps({
+  label: {
+    type: String,
+    default: "Add New Menu",
+  },
+  buttonType: {
+    type: String,
+    default: "text",
+  },
+  buttonLabel: {
+    type: String,
+    default: "Add New",
+  },
+  buttonIcon: {
+    type: String,
+    default: "solar:trash-bin-trash-bold-duotone",
+  },
+  buttonIconPosition: {
+    type: String,
+    default: "right",
+  },
+  nameLabel: {
+    type: String,
+    default: "Menu Name",
+  },
+  namePlaceholder: {
+    type: String,
+    default: "Enter menu name",
+  },
+  descriptionLabel: {
+    type: String,
+    default: "Description",
+  },
+  descriptionPlaceholder: {
+    type: String,
+    default: "Enter menu Description",
+  },
+  apiUrl: {
+    type: String,
+    default: "/api/menu",
+    required: true,
+  },
+  customBtnClass: {
+    type: String,
+    default: "",
+  },
+  categoryId: {
+    type: Number,
+    default: 1,
+  },
+  menuId: {
+    type: Number,
+    default: 1,
+  },
+});
 
-const handleSubmit = () => {
-  console.log(`New menu added: ${menuName.value}`);
-  menuName.value = "";
+const handleSubmit = (apiUrl) => {
+  const formData = reactive({
+    name: name.value,
+    description: description.value,
+    status: status.value,
+    file: uploadedFile.value,
+    apiUrl: apiUrl,
+  });
+  console.log(formData);
   isPopupOpen.value = false;
 };
 const handleCancel = () => {
-  console.log(`New menu added: ${menuName.value}`);
-  menuName.value = "";
   isPopupOpen.value = false;
 };
 </script>

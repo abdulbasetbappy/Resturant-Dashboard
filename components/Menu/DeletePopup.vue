@@ -47,7 +47,6 @@
                     class="w-36 h-36 mx-auto text-slate-100"
                 />
                 <p class="text-center text-slate-100 text-2xl">{{ warningMessage }}</p>
-                <p>{{ apiUrl }}</p>
             </div>
             <div class="mt-4 flex gap-3 justify-between">
               <MainButton

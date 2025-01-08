@@ -7,7 +7,17 @@
         </div>
         <div>
           <!-- Submit Button -->
-          <MenuCreatePopup/>
+          <MenuCreatePopup
+            label="Add New Menu"
+            buttonType="both"
+            buttonLabel="Add New Menu"
+            buttonIcon="solar:add-square-line-duotone"
+            buttonIconPosition="right"
+            nameLabel="Menu Name"
+            namePlaceholder="Enter menu name"
+            descriptionLabel="Description"
+            descriptionPlaceholder="Enter menu description"
+          />
         </div>
 
       </div>

@@ -87,7 +87,7 @@
     </div>
 
     <!--Menu Items-->
-    <MenuCreateLayout />
+    <MenuEditLayout />
   </div>
 </template>
 
