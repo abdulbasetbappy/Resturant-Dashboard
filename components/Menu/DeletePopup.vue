@@ -12,6 +12,7 @@
         label="none"
         :icon="buttonIcon"
         :iconPosition="buttonIconPosition"
+        :overWriteClass="customClass"
         @click="isPopupOpen = true"
       />
       <MainButton
@@ -94,6 +95,10 @@
     icon:{
       type: String,
       default: "solar:trash-bin-trash-bold-duotone",
+    },
+    customClass:{
+      type: String,
+      default: "",
     },
     warningMessage:{
       type: String,

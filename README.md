@@ -21,5 +21,25 @@
 # Dynamic Sections Features
 
 ## Delete Popup 
+**lable**
+**buttonType**
+**buttonIcon**
+**buttonLabel**
+**buttonIconPosition**
+**icon**
+**warningMessage**
+**customBtnClass**
+**customClass**
+**apiUrl**
 
 ## Create Popup
+**lable**
+**buttonType**
+**buttonIcon**
+**buttonLabel**
+**buttonIconPosition**
+**icon**
+**warningMessage**
+**customBtnClass**
+**apiUrl**
+**customClass**

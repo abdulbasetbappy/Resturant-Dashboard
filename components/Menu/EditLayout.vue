@@ -27,17 +27,36 @@
               descriptionLabel="Description"
               descriptionPlaceholder="Enter Item's description"
             />
-            <Icon
-              name="solar:branching-paths-up-bold-duotone"
-              class="w-7 h-7 cursor-pointer"
+
+            <MenuOptionsPopup
+              label="Options & Customizations"
+              buttonIcon="solar:branching-paths-up-bold-duotone"
+              buttonType="icon"
+              nameLabel="Item's Name"
+              namePlaceholder="Enter item's name"
+              descriptionLabel="Description"
+              descriptionPlaceholder="Enter items's description"
+              customBtnClass=""
             />
-            <Icon
-              name="solar:pen-new-round-bold-duotone"
-              class="w-7 h-7 cursor-pointer"
+            <MenuEditPopup
+              label="Edit Category"
+              buttonIcon="solar:pen-new-round-bold-duotone"
+              buttonType="icon"
+              nameLabel="Category Name"
+              namePlaceholder="Enter Category name"
+              descriptionLabel="Description"
+              descriptionPlaceholder="Enter Category description"
+              customBtnClass=""
             />
-            <Icon
-              name="solar:trash-bin-trash-bold-duotone"
-              class="w-7 h-7 cursor-pointer"
+            <MenuDeletePopup
+            label="Delete Category"
+            buttonType="icon"
+            customClass="w-7 h-7 cursor-pointer bg-opacity-0"
+            buttonIcon="solar:trash-bin-trash-bold-duotone"
+            buttonIconPosition="right"
+            icon="solar:trash-bin-trash-bold-duotone"
+            warningMessage="Are you sure! You want to Delete this Category?"
+            apiUrl="/api/menu"
             />
           </div>
         </div>
@@ -70,23 +89,47 @@
               class="w-16 h-8 text-md font-semibold px-2 m-0 p-0 bg-slate-800 text-white rounded-lg"
             />
 
-            <div class="flex flex-row gap-3 items-center opacity-75 pr-3">
-              <Icon
-                name="solar:eye-scan-bold-duotone"
-                class="w-6 h-6 cursor-pointer"
-              />
-              <Icon
-                name="solar:ruler-cross-pen-bold-duotone"
-                class="w-6 h-6 cursor-pointer"
-              />
-              <Icon
-                name="solar:copy-bold-duotone"
-                class="w-6 h-6 cursor-pointer"
-              />
-              <Icon
-                name="solar:trash-bin-trash-bold-duotone"
-                class="w-6 h-6 cursor-pointer"
-              />
+            <div class="flex flex-row gap-3 items-center pr-3"> 
+              <MenuEditPopup
+              label="View Item"
+              buttonIcon="solar:eye-scan-bold-duotone"
+              buttonType="icon"
+              nameLabel="Item's Name"
+              namePlaceholder="Enter item's name"
+              descriptionLabel="Description"
+              descriptionPlaceholder="Enter items's description"
+              customBtnClass=""
+            />
+              <MenuEditPopup
+              label="Edit Item"
+              buttonIcon="solar:pen-new-round-bold-duotone"
+              buttonType="icon"
+              nameLabel="Item's Name"
+              namePlaceholder="Enter item's name"
+              descriptionLabel="Description"
+              descriptionPlaceholder="Enter items's description"
+              customBtnClass=""
+            />
+              <MenuDuplecatePopup
+              label="Duplicate Item"
+              buttonIcon="solar:copy-bold-duotone"
+              buttonType="icon"
+              nameLabel="Item's Name"
+              namePlaceholder="Enter item's name"
+              descriptionLabel="Description"
+              descriptionPlaceholder="Enter items's description"
+              customBtnClass=""
+            />
+              <MenuDeletePopup
+            label="Delete Item"
+            buttonType="icon"
+            buttonIcon="solar:trash-bin-trash-bold-duotone"
+            buttonIconPosition="right"
+            customClass="w-7 h-7 cursor-pointer bg-opacity-0"
+            icon="solar:trash-bin-trash-bold-duotone"
+            warningMessage="Are you sure! You want to Delete this Item?"
+            apiUrl="/api/menu"
+            />
             </div>
           </div>
         </div>
@@ -119,6 +162,7 @@
 </template>
 
 <script setup>
+
 const CategoriesWithItems = [
   {
     id: 1,

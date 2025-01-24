@@ -35,11 +35,16 @@
                 Description
               </p>
             </div>
-
-            <MainButton
-              label="Edit"
-              icon="solar:pen-new-square-bold-duotone"
-              :handleSubmit="handleSubmit"
+            <MenuEditPopup
+              label="Edit Menu"
+              buttonIcon="solar:pen-new-square-bold-duotone"
+              buttonType="both"
+              buttonLabel="Edit"
+              nameLabel="Menu Name"
+              namePlaceholder="Enter Menu name"
+              descriptionLabel="Description"
+              descriptionPlaceholder="Menu Short description"
+              customBtnClass=""
             />
           </div>
 
